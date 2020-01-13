@@ -128,7 +128,7 @@ namespace RPSLS
                 }
                 if (p2Choice == "Spock")
                 {
-                    Console.WriteLine("Paper disproves Rock");
+                    Console.WriteLine("Paper disproves Spock");
                     P1Win();
                 }
             }
@@ -218,7 +218,7 @@ namespace RPSLS
         {
             Console.WriteLine($"{p1.name} beat {p2.name}");
             p1.wins++;
-            Console.WriteLine($"{p1.name} has {p1.wins} wins.");
+            Console.WriteLine($"{p1.name} has {p1.wins} wins");
             Console.WriteLine($"{p1.name} {p1.wins} - {p2.wins} {p2.name}");
             Console.ReadLine();
             Console.Clear();
@@ -228,7 +228,7 @@ namespace RPSLS
         {
             Console.WriteLine($"{p2.name} beat {p1.name}");
             p2.wins++;
-            Console.WriteLine($"{p2.name} has {p2.wins} wins.");
+            Console.WriteLine($"{p2.name} has {p2.wins} wins");
             Console.WriteLine($"{p1.name} {p1.wins} - {p2.wins} {p2.name}");
             Console.ReadLine();
             Console.Clear();
