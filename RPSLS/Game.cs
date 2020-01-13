@@ -11,26 +11,34 @@ namespace RPSLS
     {
         Player p1;
         Player p2;
+        int firstTo = 3;
         public Game(string name)
         {
             p1 = new Human(name);
-            StartGame();
         }
 
         public void StartGame()
         {
             ChooseOpponent();
-            while (p1.wins < 2 && p2.wins < 2)
+            while (p1.wins < firstTo && p2.wins < firstTo)
             {
                 RunRound();
             }
-            if (p1.wins == 2)
+            if (p1.wins == firstTo)
             {
                 Console.WriteLine($"{p1.name} wins!");
             }
-            if (p2.wins == 2)
+            if (p2.wins == firstTo)
             {
                 Console.WriteLine($"{p2.name} wins!");
+            }
+            Console.WriteLine("Would you like to play again? y/n");
+            string again = Console.ReadLine();
+            if (again == "y")
+            {
+                p1.wins = 0;
+                p2.wins = 0;
+                StartGame();
             }
         }
         public void ChooseOpponent()
@@ -156,7 +164,7 @@ namespace RPSLS
                 if (p2Choice == "Rock")
                 {
                     Console.WriteLine("Rock crushes Lizard");
-                    P1Win();
+                    P2Win();
                 }
                 if (p2Choice == "Paper")
                 {
@@ -211,6 +219,7 @@ namespace RPSLS
             Console.WriteLine($"{p1.name} beat {p2.name}");
             p1.wins++;
             Console.WriteLine($"{p1.name} has {p1.wins} wins.");
+            Console.WriteLine($"{p1.name} {p1.wins} - {p2.wins} {p2.name}");
             Console.ReadLine();
             Console.Clear();
 
@@ -220,12 +229,14 @@ namespace RPSLS
             Console.WriteLine($"{p2.name} beat {p1.name}");
             p2.wins++;
             Console.WriteLine($"{p2.name} has {p2.wins} wins.");
+            Console.WriteLine($"{p1.name} {p1.wins} - {p2.wins} {p2.name}");
             Console.ReadLine();
             Console.Clear();
         }
         public void Tie()
         {
             Console.WriteLine($"{p1.name} tied {p2.name}");
+            Console.WriteLine($"{p1.name} {p1.wins} - {p2.wins} {p2.name}");
             Console.ReadLine();
             Console.Clear();
         }

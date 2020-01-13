@@ -11,6 +11,7 @@ namespace RPSLS
         public Human(string name)
         {
             this.name = name;
+            wins = 0;
         }
         public override string ChooseGesture()
         {

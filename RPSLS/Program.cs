@@ -14,6 +14,7 @@ namespace RPSLS
             string name1 = Console.ReadLine();
 
             Game start = new Game(name1);
+            start.StartGame();
             Console.ReadLine();
         }
     }

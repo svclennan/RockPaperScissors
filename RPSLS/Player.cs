@@ -9,8 +9,8 @@ namespace RPSLS
     abstract class Player
     {
         public string name;
-        public string[] options = new string[5] { "Rock", "Paper", "Scissors", "Lizzard", "Spock" };
-        public int wins = 0;
+        public string[] options = new string[5] { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        public int wins;
         public abstract string ChooseGesture();
     }
 }
