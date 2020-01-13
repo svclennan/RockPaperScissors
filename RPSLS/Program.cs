@@ -10,6 +10,10 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("What is your name?");
+            string name1 = Console.ReadLine();
+
+            Game start = new Game(name1);
         }
     }
 }
