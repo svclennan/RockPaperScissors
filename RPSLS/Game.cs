@@ -23,6 +23,7 @@ namespace RPSLS
         public void StartGame()
         {
             ChooseOpponent();
+            ChooseRounds();
             while (p1.wins < firstTo && p2.wins < firstTo)
             {
                 RunRound();
@@ -43,6 +44,31 @@ namespace RPSLS
                 p2.wins = 0;
                 StartGame();
             }
+        }
+        public void ChooseRounds()
+        {
+            Console.WriteLine("Choose an odd number of rounds to play.");
+            bool valid = int.TryParse(Console.ReadLine(), out int rounds);
+            while (!valid)
+            {
+                Console.WriteLine("Invalid input. Enter an odd number.");
+                valid = int.TryParse(Console.ReadLine(), out rounds);
+            }
+            while (valid)
+            {
+                if (rounds % 2 == 1)
+                {
+                    firstTo = (rounds / 2) + 1;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                    ChooseRounds();
+                    break;
+                }
+            }
+            
         }
         public void ChooseOpponent()
         {
