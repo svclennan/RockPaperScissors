@@ -15,6 +15,9 @@ namespace RPSLS
         public Game(string name)
         {
             p1 = new Human(name);
+            Console.WriteLine("The rules are simple.\nRock crushes Scissors\nScissors cuts Paper\n" +
+                "Paper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\n" +
+                "Scissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock");
         }
 
         public void StartGame()
